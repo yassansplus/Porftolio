@@ -163,6 +163,9 @@
                     {#</li>#}
                     {#</ul>#}
                     {#</nav>#}
+                    <div class="navigation">
+                        {{ knp_pagination_render(blogs) }}
+                    </div>
                 </div>
                 {% include '/elements/rightSidebar.html.twig' %}
             </div>

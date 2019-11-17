@@ -20,6 +20,7 @@ class AppKernel extends Kernel
             new AdminBundle\AdminBundle(),
             new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
             new FOS\CKEditorBundle\FOSCKEditorBundle(),
+            new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
