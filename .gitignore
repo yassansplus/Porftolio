@@ -16,3 +16,6 @@
 /vendor/
 /web/bundles/
 /.idea/
+/web/assets/example/
+/web/assets/Kenedy/
+/node_modules/

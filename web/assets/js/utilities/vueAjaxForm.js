@@ -1,7 +1,6 @@
 $(function(){
 
-
-
+  
     $('#Postcomment').submit(function (e) {
         e.preventDefault();
         let that = $(this)

@@ -19,6 +19,9 @@ class PresentationType extends AbstractType
         $builder
             ->add('username', TextType::class, ["attr"=>["class"=>"form-control"]])
             ->add('twitter', TextType::class, ["attr"=>["class"=>"form-control"]])
+            ->add('phone', TextType::class, ["attr"=>["class"=>"form-control"]])
+            ->add('email', TextType::class, ["attr"=>["class"=>"form-control"]])
+            ->add('titre', TextType::class, ["attr"=>["class"=>"form-control"]])
             ->add('github', TextType::class, ["attr"=>["class"=>"form-control"]])
             ->add('shortDescription',CKEditorType::class , ["attr"=>["class"=>"form-control"],'config' => ['toolbar' => 'my_toolbar_1']])
             ->add('description',CKEditorType::class , ["attr"=>["class"=>"form-control"],'config' => ['toolbar' => 'my_toolbar_1']]);

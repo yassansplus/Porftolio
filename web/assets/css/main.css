@@ -6,6 +6,9 @@
 /* =================================== */
 /*  Basic Style 
 /* =================================== */
+html {
+  scroll-behavior: smooth;
+}
 ::-moz-selection {
   /* Code for Firefox */
   background-color: #e45447;
@@ -1891,7 +1894,9 @@ h1, h2, h3, h4, h5, h6 {
 
 #header #logo img {
   padding: 0;
-  margin: 0; }
+  margin: 0;
+  max-width: 50px;
+}
 
 @media (max-width: 768px) {
   #header #logo h1 {
@@ -3358,7 +3363,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 ################
 */
 .footer-area {
-  padding: 100px 0; }
+  padding: 25px 0; }
   @media (max-width: 1024px) {
     .footer-area {
       padding: 60px 0; } }
@@ -3402,4 +3407,11 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 .dropdown-toggle::after{
   display: none;
+}
+.footer-area img{
+  max-width: 75px;
+}
+#simpleUsage{
+  font-family: "Roboto", sans-serif;
+  color: #e45447;
 }

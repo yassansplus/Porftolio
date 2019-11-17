@@ -22,20 +22,20 @@ class User extends  BaseUser
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected $id;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="name", type="string", length=255)
-     */
-    private $name;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="surname", type="string", length=255)
-     */
-    private $surname;
+//
+//    /**
+//     * @var string
+//     *
+//     * @ORM\Column(name="name", type="string", length=255)
+//     */
+//    private $name;
+//
+//    /**
+//     * @var string
+//     *
+//     * @ORM\Column(name="surname", type="string", length=255)
+//     */
+//    private $surname;
     public function __construct()
     {
         parent::__construct();

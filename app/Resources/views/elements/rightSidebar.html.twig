@@ -17,14 +17,14 @@
             {#<img src="img/blog/user-info.png" alt="">#}
             <a href="#"><h4>{{ presentation.username }}</h4></a>
             <p>
-                Jeune génie incompris
+                {{ presentation.titre| raw }}
             </p>
             <ul class="social-links">
                 <li><a href="http://twitter.com/{{ presentation.twitter }}"><i class="fa fa-twitter"></i></a></li>
                 <li><a href="http://github.com/{{ presentation.github }}"><i class="fa fa-github"></i></a></li>
             </ul>
             <p>
-                {{ presentation.shortDescription }}
+                {{ presentation.shortDescription |raw }}
             </p>
         </div>
         <div class="single-sidebar-widget popular-post-widget">
@@ -38,7 +38,7 @@
                         </div>
                         <div class="details">
                             <a href="{{ path('blog_show',{slug : blog.slug}) }}"><h6>{{ blog.title }}</h6></a>
-                            <p>02 Hours ago</p>
+                            {#<p>02 Hours ago</p>#}
                         </div>
                     </div>
                 {% else %}

@@ -8,7 +8,7 @@
             <div class="row d-flex align-items-center justify-content-center">
                 <div class="about-content col-lg-12">
                     <h1 class="text-white">
-                       La rédac'
+                        La rédac'
                     </h1>
                     <p class="link-nav">
 						<span class="box">
@@ -22,123 +22,132 @@
     <!-- End banner Area -->
 
 
-    <!-- Start top-category-widget Area -->
-    <section class="top-category-widget-area pt-90 pb-90 ">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="single-cat-widget">
-                        <div class="content relative">
-                            <div class="overlay overlay-bg"></div>
-                            <a href="#" target="_blank">
-                                <div class="thumb">
-                                    <img class="content-image img-fluid d-block mx-auto" src="img/blog/cat-widget1.jpg"
-                                         alt="">
-                                </div>
-                                <div class="content-details">
-                                    <h4 class="content-title mx-auto text-uppercase">Social life</h4>
-                                    <span></span>
-                                    <p>Enjoy your social life together</p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="single-cat-widget">
-                        <div class="content relative">
-                            <div class="overlay overlay-bg"></div>
-                            <a href="#" target="_blank">
-                                <div class="thumb">
-                                    <img class="content-image img-fluid d-block mx-auto" src="img/blog/cat-widget2.jpg"
-                                         alt="">
-                                </div>
-                                <div class="content-details">
-                                    <h4 class="content-title mx-auto text-uppercase">Politics</h4>
-                                    <span></span>
-                                    <p>Be a part of politics</p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="single-cat-widget">
-                        <div class="content relative">
-                            <div class="overlay overlay-bg"></div>
-                            <a href="#" target="_blank">
-                                <div class="thumb">
-                                    <img class="content-image img-fluid d-block mx-auto" src="img/blog/cat-widget3.jpg"
-                                         alt="">
-                                </div>
-                                <div class="content-details">
-                                    <h4 class="content-title mx-auto text-uppercase">Food</h4>
-                                    <span></span>
-                                    <p>Let the food be finished</p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End top-category-widget Area -->
+    {#<!-- Start top-category-widget Area -->#}
+    {#<section class="top-category-widget-area pt-90 pb-90 ">#}
+        {#<div class="container">#}
+            {#<div class="row">#}
+                {#<div class="col-lg-4">#}
+                    {#<div class="single-cat-widget">#}
+                        {#<div class="content relative">#}
+                            {#<div class="overlay overlay-bg"></div>#}
+                            {#<a href="#" target="_blank">#}
+                                {#<div class="thumb">#}
+                                    {#<img class="content-image img-fluid d-block mx-auto" src="img/blog/cat-widget1.jpg"#}
+                                         {#alt="">#}
+                                {#</div>#}
+                                {#<div class="content-details">#}
+                                    {#<h4 class="content-title mx-auto text-uppercase">Social life</h4>#}
+                                    {#<span></span>#}
+                                    {#<p>Enjoy your social life together</p>#}
+                                {#</div>#}
+                            {#</a>#}
+                        {#</div>#}
+                    {#</div>#}
+                {#</div>#}
+                {#<div class="col-lg-4">#}
+                    {#<div class="single-cat-widget">#}
+                        {#<div class="content relative">#}
+                            {#<div class="overlay overlay-bg"></div>#}
+                            {#<a href="#" target="_blank">#}
+                                {#<div class="thumb">#}
+                                    {#<img class="content-image img-fluid d-block mx-auto" src="img/blog/cat-widget2.jpg"#}
+                                         {#alt="">#}
+                                {#</div>#}
+                                {#<div class="content-details">#}
+                                    {#<h4 class="content-title mx-auto text-uppercase">Politics</h4>#}
+                                    {#<span></span>#}
+                                    {#<p>Be a part of politics</p>#}
+                                {#</div>#}
+                            {#</a>#}
+                        {#</div>#}
+                    {#</div>#}
+                {#</div>#}
+                {#<div class="col-lg-4">#}
+                    {#<div class="single-cat-widget">#}
+                        {#<div class="content relative">#}
+                            {#<div class="overlay overlay-bg"></div>#}
+                            {#<a href="#" target="_blank">#}
+                                {#<div class="thumb">#}
+                                    {#<img class="content-image img-fluid d-block mx-auto" src="img/blog/cat-widget3.jpg"#}
+                                         {#alt="">#}
+                                {#</div>#}
+                                {#<div class="content-details">#}
+                                    {#<h4 class="content-title mx-auto text-uppercase">Food</h4>#}
+                                    {#<span></span>#}
+                                    {#<p>Let the food be finished</p>#}
+                                {#</div>#}
+                            {#</a>#}
+                        {#</div>#}
+                    {#</div>#}
+                {#</div>#}
+            {#</div>#}
+        {#</div>#}
+    {#</section>#}
+    {#<!-- End top-category-widget Area -->#}
 
 
 
 
 
     <!-- Start post-content Area -->
-    <section class="post-content-area">
+    <section class="post-content-area pt-90 pb-90">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 posts-list">
-                    {% for blog in blogs %}
-                        {% if blog.published %}
-                            <div class="single-post row">
-                                <div class="col-lg-3  col-md-3 meta-details">
-                                    {#<ul class="tags">#}
-                                        {#<li><a href="#">Food,</a></li>#}
-                                        {#<li><a href="#">Technology,</a></li>#}
-                                        {#<li><a href="#">Politics,</a></li>#}
-                                        {#<li><a href="#">Lifestyle</a></li>#}
-                                    {#</ul>#}
-                                    <div class="user-details row">
-                                        <p class="user-name col-lg-12 col-md-12 col-6"><a href="#">Sawssen</a> <span
-                                                    class="lnr lnr-user"></span></p>
-                                        <p class="date col-lg-12 col-md-12 col-6"><a href="#">{{ blog.publishedAt | date("d/m/Y h:m") }}</a> <span
-                                                    class="lnr lnr-calendar-full"></span></p>
-                                        <p class="view col-lg-12 col-md-12 col-6"><a href="#">{{ blog.nbViewvers }} Views</a> <span
-                                                    class="lnr lnr-eye"></span></p>
-                                        <p class="comments col-lg-12 col-md-12 col-6"><a href="#">{{ blog.comments|length }} Commentaires</a> <span
-                                                    class="lnr lnr-bubble"></span></p>
-                                    </div>
-                                </div>
-                                <div class="col-lg-9 col-md-9">
-                                    <div class="feature-img">
-                                        <img class="img-fluid" src="{{ path("image", {slug: blog.slug}) }}" alt="">
-                                    </div>
-                                    <a class="posts-title" href="{{ path('blog_show',{slug : blog.slug}) }}"><h3>{{ blog.title }}</h3></a>
-                                    <p class="excert">
-                                        {{ blog.blogArticle| slice(0,255)| striptags | raw }} ...
-                                    </p>
-
-
-                                    <a href="{{ path('blog_show',{slug : blog.slug}) }}" class="primary-btn" data-text="Voir Plus">
-                                        <span>V</span>
-                                        <span>o</span>
-                                        <span>i</span>
-                                        <span>r</span>
-                                        <span> </span>
-                                        <span>P</span>
-                                        <span>l</span>
-                                        <span>u</span>
-                                        <span>s</span>
-                                    </a>
+                    {% for blog in blogs if  blog.published %}
+                        <div class="single-post row">
+                            <div class="col-lg-3  col-md-3 meta-details">
+                                {#<ul class="tags">#}
+                                {#<li><a href="#">Food,</a></li>#}
+                                {#<li><a href="#">Technology,</a></li>#}
+                                {#<li><a href="#">Politics,</a></li>#}
+                                {#<li><a href="#">Lifestyle</a></li>#}
+                                {#</ul>#}
+                                <div class="user-details row">
+                                    <p class="user-name col-lg-12 col-md-12 col-6"><a href="#">Sawssen</a> <span
+                                                class="lnr lnr-user"></span></p>
+                                    <p class="date col-lg-12 col-md-12 col-6"><a
+                                                href="#">{{ blog.publishedAt | date("d/m/Y h:m") }}</a> <span
+                                                class="lnr lnr-calendar-full"></span></p>
+                                    <p class="view col-lg-12 col-md-12 col-6"><a href="#">{{ blog.nbViewvers }}
+                                            Views</a> <span
+                                                class="lnr lnr-eye"></span></p>
+                                    <p class="comments col-lg-12 col-md-12 col-6"><a href="#">{{ blog.comments|length }}
+                                            Commentaires</a> <span
+                                                class="lnr lnr-bubble"></span></p>
                                 </div>
                             </div>
-                        {% endif %}
+                            <div class="col-lg-9 col-md-9">
+                                <div class="feature-img">
+                                    <img class="img-fluid" src="{{ path("image", {slug: blog.slug}) }}" alt="">
+                                </div>
+                                <a class="posts-title" href="{{ path('blog_show',{slug : blog.slug}) }}">
+                                    <h3>{{ blog.title }}</h3></a>
+                                <p class="excert">
+                                    {{ blog.blogArticle| slice(0,255) | raw }} ...
+                                </p>
+
+
+                                <a href="{{ path('blog_show',{slug : blog.slug}) }}" class="primary-btn"
+                                   data-text="Voir Plus">
+                                    <span>V</span>
+                                    <span>o</span>
+                                    <span>i</span>
+                                    <span>r</span>
+                                    <span> </span>
+                                    <span>P</span>
+                                    <span>l</span>
+                                    <span>u</span>
+                                    <span>s</span>
+                                </a>
+                            </div>
+                        </div>
+                    {% else %}
+                        <div class="comment-form">
+                            <h4>Oops !</h4>
+                            <p > Il semblerait qu'il n'y ai pas encore de poste !</p>
+
+                        </div>
                     {% endfor %}
                     {#<nav class="blog-pagination justify-content-center d-flex">#}
                     {#<ul class="pagination">#}

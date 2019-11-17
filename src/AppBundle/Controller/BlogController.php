@@ -40,7 +40,7 @@ class BlogController extends Controller
 //        $blogs = $em->getRepository('AppBundle:Blog')->findAll();
         $presentation = $em->getRepository(Presentation::class)->findAll()[0];
 
-        $dql   = "SELECT a FROM AppBundle:Blog a";
+        $dql   = "SELECT b FROM AppBundle:Blog b order by b.publishedAt DESC";
         $query = $em->createQuery($dql);
 
         $paginator  = $this->get('knp_paginator');

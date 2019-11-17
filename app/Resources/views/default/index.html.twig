@@ -16,18 +16,17 @@
                         et
                         <span class="developer">Developpeuse</span>
                     </div>
-                    <a href="#" class="primary-btn" data-text="En savoir plus sur moi">
-                        <span>H</span>
-                        <span>i</span>
-                        <span>r</span>
-                        <span>e</span>
-                        <span> </span>
-                        <span>M</span>
-                        <span>e</span>
+                    {% set ensavoirplus = "en savoir plus " %}
+
+
+                    <a href="#whoIAm" class="primary-btn" data-text="En savoir plus sur moi">
+                        {% for  letter in ensavoirplus|split('') %}
+                            <span>{{ letter }}</span>
+                        {% endfor %}
                     </a>
                 </div>
                 <div class="banner-img col-lg-6 col-md-6 align-self-end">
-                    <img class="img-fluid" src="img/banner-img.png" alt="">
+                    <img class="img-fluid" src="{{ asset('assets/img/user/arrow.png') }}" alt="">
                 </div>
             </div>
         </div>
@@ -67,20 +66,21 @@
         <div class="container">
             <div class="row align-items-center justify-content-between">
                 <div class="col-lg-6 about-left">
-                    <img class="img-fluid" src="img/about-img.jpg" alt="">
+                    <img class="img-fluid" src="{{ asset('assets/img/user/Macdesigned.png') }}" alt="">
                 </div>
                 <div class="col-lg-5 col-md-12 about-right">
-                    <div class="section-title">
+                    <div class="section-title" id="whoIAm">
                         <h2>Qui suis-je ?</h2>
                     </div>
                     <div class="mb-50 wow fadeIn" data-wow-duration=".8s">
-                        {{ presentation.description }}
+                        {{ presentation.description | raw }}
                     </div>
-                    <a href="#" class="primary-btn white" data-text="Voir mes creations">
+                    {% set creation = "Voir mes créations" %}
+                    <a href="{{ path('blog_index') }}" class="primary-btn white" data-text="Voir mes créations">
                         <span>Voir mes creations</span>
 
                     </a>
-                    <a href="#" class="primary-btn" data-text="Contact">
+                    <a href="#ContactInfo" class="primary-btn" data-text="Contact">
                         <span>Contact</span>
                     </a>
                 </div>
@@ -234,10 +234,11 @@
                                 </div>
                             </div>
                             <div class="bottom-sec wow fadeIn" data-wow-duration="2s" data-wow-delay="0.2s">
-                              {{ job.description }}
+                                {{ job.description|raw }}
                                 <div>
                                     {% if is_granted('ROLE_ADMIN') %}
-                                        <button class="btn btn-danger btn-delete" data-id="{{ job.id }}">Supprimer</button>
+                                        <button class="btn btn-danger btn-delete" data-id="{{ job.id }}">Supprimer
+                                        </button>
                                     {% endif %}
                                 </div>
 
@@ -299,9 +300,9 @@
 
 
     <!-- Start Contact Area -->
-    <section class="contact-area section-gap">
+    <section class="contact-area section-gap" id="ContactInfo">
         <div class="container">
-            <div class="row">
+            <div class="row" >
                 <div class="col-lg-12">
                     <div class="contact-title">
                         <h2>Contact</h2>
@@ -311,21 +312,17 @@
             </div>
 
             <div class="row mt-80">
-                <div class="col-lg-4 col-md-4">
+                <div class="col-lg-6 col-md-6">
                     <div class="contact-box">
-                        <h4>+44 2365 654 8962</h4>
+                        <h4>{{ presentation.phone }}</h4>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-4">
+                <div class="col-lg-6 col-md-6">
                     <div class="contact-box">
-                        <h4>information@colorlib.com</h4>
+                        <h4>{{ presentation.email }}</h4>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-4">
-                    <div class="contact-box">
-                        <h4>kenedyjackson.me</h4>
-                    </div>
-                </div>
+
             </div>
 
         </div>
