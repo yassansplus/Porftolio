@@ -1,0 +1,18 @@
+
+
+    <h1>Blog creation</h1>
+
+    {{ form_start(form, { 'attr': {'id': 'newBlog'} }) }}
+        {{ form_widget(form) }}
+
+    <button type="submit"  class="btn btn-primary btn-sm">
+        <i class="fa fa-dot-circle-o"></i> Submit
+    </button>
+    {{ form_end(form) }}
+
+    {#<ul>#}
+        {#<li>#}
+            {#<a href="{{ path('blog_index') }}">Back to the list</a>#}
+        {#</li>#}
+    {#</ul>#}
+

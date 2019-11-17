@@ -1,0 +1,27 @@
+app_job:
+    resource: "@AdminBundle/Controller/JobController.php"
+    type:     annotation
+
+app_presentation:
+    resource: "@AdminBundle/Controller/PresentationController.php"
+    type:     annotation
+
+app_blog:
+    resource: "@AppBundle/Controller/BlogController.php"
+    type:     annotation
+
+admin:
+    resource: "@AdminBundle/Controller/"
+    type:     annotation
+    prefix:   /admin
+
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+fos_js_routing:
+    resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"

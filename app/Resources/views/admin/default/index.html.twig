@@ -1,0 +1,239 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block body %}
+    <!-- PAGE CONTAINER-->
+
+
+    <!-- MAIN CONTENT-->
+    <div class="main-content">
+        <div class="section__content section__content--p30">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="overview-wrap">
+                            <h2 class="title-1">overview</h2>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row m-t-25">
+                    <div class="col-sm-6 col-lg-4 ">
+                        <div class="overview-item overview-item--c1">
+                            <div class="overview__inner">
+                                <div class="overview-box clearfix">
+                                    <div class="icon">
+                                        <i class="zmdi zmdi-account-o"></i>
+                                    </div>
+                                    <div class="text">
+                                        <h2>{{ numberComment }}</h2>
+                                        <span>Commentaires</span>
+                                    </div>
+                                </div>
+                                <div class="overview-chart">
+                                    <canvas id="widgetChart1"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-4">
+                        <div class="overview-item overview-item--c2">
+                            <div class="overview__inner">
+                                <div class="overview-box clearfix">
+                                    <div class="icon">
+                                        <i class="zmdi zmdi-shopping-cart"></i>
+                                    </div>
+                                    <div class="text">
+                                        <h2>{{ articles|length }}</h2>
+                                        <span>Articles</span>
+                                    </div>
+                                </div>
+                                <div class="overview-chart">
+                                    <canvas id="widgetChart2"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-4">
+                        <div class="overview-item overview-item--c3">
+                            <div class="overview__inner">
+                                <div class="overview-box clearfix">
+                                    <div class="icon">
+                                        <i class="zmdi zmdi-calendar-note"></i>
+                                    </div>
+                                    <div class="text">
+                                        <h2>{{ numberVue }}</h2>
+                                        <span>posts vue</span>
+                                    </div>
+                                </div>
+                                <div class="overview-chart">
+                                    <canvas id="widgetChart3"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row tab-content">
+                    <div class="col-lg-12">
+                        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active show"
+                                   id="pills-home-tab" data-toggle="pill" href="#newArticle" role="tab"
+                                   aria-controls="pills-home" aria-selected="false">
+                                    Nouvel article
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#newPresentation"
+                                   role="tab" aria-controls="pills-profile" aria-selected="false">
+                                    Présentation
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link " id="pills-contact-tab" data-toggle="pill" href="#newJob" role="tab"
+                                   aria-controls="pills-contact" aria-selected="true">
+                                    Nouveau Job
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-12 tab-pane fade active show" role="tabpanel" aria-labelledby="home-tab"
+                         id="newArticle">
+                        <div class="card">
+                            <div class="card-header">Article</div>
+                            <div class="card-body">
+                                <div class="card-title">
+                                    <h3 class="text-center title-2">Titre</h3>
+                                </div>
+                                <hr>
+                                {{ render(controller(
+                                    'AppBundle:Blog:new'
+                                )) }}
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 fade  tab-pane" role="tabpanel" aria-labelledby="presentation-tab"
+                         id="newPresentation">
+                        <div class="card">
+                            <div class="card-header">Presentation</div>
+                            <div class="card-body">
+                                <div class="card-title">
+                                    <h3 class="text-center title-2">Titre</h3>
+                                </div>
+                                <hr>
+                                {{ render(controller(
+                                    'AdminBundle:Presentation:new'
+                                )) }}
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 fade tab-pane" role="tabpanel" aria-labelledby="job-tab" id="newJob">
+                        <div class="card">
+                            <div class="card-header">Job CV</div>
+                            <div class="card-body">
+                                <div class="card-title">
+                                    <h3 class="text-center title-2">Titre</h3>
+                                </div>
+                                <hr>
+                                {{ render(controller(
+                                    'AdminBundle:Job:new'
+                                )) }}
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {% if articles|length > 0 %}
+                    <div class="row">
+                        <div class="table-responsive table-responsive-data2">
+                            <table class="table table-data2">
+                                <thead>
+                                <tr>
+                                    <th>
+                                        {#<label class="au-checkbox">#}
+                                        {#<input type="checkbox">#}
+                                        {#<span class="au-checkmark"></span>#}
+                                        {#</label>#}
+                                    </th>
+                                    <th>titre</th>
+                                    <th>date de parution</th>
+                                    <th>nombre de commentaire</th>
+                                    <th>status</th>
+                                    <th></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for article in articles %}
+
+                                    <tr class="tr-shadow">
+                                        <td>
+                                            {#<label class="au-checkbox">#}
+                                            {#<input type="checkbox">#}
+                                            {#<span class="au-checkmark"></span>#}
+                                            {#</label>#}
+                                        </td>
+                                        <td>{{ article.title }}</td>
+                                        <td>
+                                            <span class="block-email">{{ article.publishedAt |date("d/m/Y") }}</span>
+                                        </td>
+                                        <td class="desc">il y a : 256 commentaires</td>
+                                        {% if article.published %}
+                                            <td>
+                                                <span class="status--process">publié</span>
+                                            </td>
+                                        {% else %}
+                                            <td>
+                                                <span class="status--denied">non publié</span>
+                                            </td>
+                                        {% endif %}
+                                        <td>
+                                            <div class="table-data-feature">
+
+                                                <a class="item editArticle" data-toggle="modal"
+                                                   data-target="#exampleModal" data-id="{{ article.id }}"
+                                                   data-toggle="tooltip" data-placement="top" title=""
+                                                   data-original-title="Edit">
+                                                    <i class="zmdi zmdi-edit"></i>
+                                                </a>
+                                                <a class="item deleteArticle" data-id="{{ article.id }}"
+                                                   data-toggle="tooltip" data-placement="top" title=""
+                                                   data-original-title="Delete">
+                                                    <i class="zmdi zmdi-delete"></i>
+                                                </a>
+
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="spacer"></tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                {% endif %}
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="copyright">
+                            <p>Copyright © 2018 Colorlib. All rights reserved. Template by <a
+                                        href="https://colorlib.com">Colorlib</a>.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END MAIN CONTENT-->
+    <!-- END PAGE CONTAINER-->
+    {% include 'admin/element/modal.html.twig' %}
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset("assets/js/utilities/form.js") }}"></script>
+
+{% endblock %}
